@@ -1,0 +1,39 @@
+experiment_name: stage3_benchmark
+seed: 2026
+device: cuda
+allow_cpu_fallback: false
+model_type: advanced
+board_size: 15
+rule_mode: basic
+tactical_games: 0
+use_augmentation: false
+use_auxiliary_loss: false
+pretrain_epochs: 0
+finetune_epochs: 0
+batch_size: 64
+learning_rate: 0.0003
+weight_decay: 0.0001
+num_simulations: 100
+selfplay_games: 0
+benchmark_games: 50
+checkpoint_dir: outputs/checkpoints
+log_dir: outputs/logs
+output_dir: outputs/experiments
+resume_from:
+promote: false
+loss_weights:
+  policy: 1.0
+  value: 1.0
+  threat: 0.3
+  forbidden: 0.2
+  tactical_score: 0.1
+scheduler: constant
+warmup_epochs: 0
+grad_clip: 5.0
+mixed_precision: false
+max_moves: 160
+cnn_checkpoint: outputs/checkpoints/latest.pt
+resnet_checkpoint: outputs/checkpoints/latest_resnet.pt
+advanced_checkpoint: outputs/checkpoints/latest_advanced.pt
+pretrained_advanced_checkpoint: outputs/checkpoints/pretrained_advanced.pt
+output: outputs/evaluation/deep_benchmark_latest.json

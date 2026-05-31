@@ -1,6 +1,66 @@
-*.i
-*.ii
-*.gpu
-*.ptx
-*.cubin
-*.fatbin
+# Python caches and local virtual environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# IDE and OS metadata
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local runtime outputs, datasets and trained weights
+output/
+outputs/
+data/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.npz
+*.npy
+*.rif
+*.jsonl
+*.csv
+*.log
+
+# Local documentation, reference material and generated packages
+docs/
+referernce/
+reference/
+softcopyright_source_staging/
+软著申请材料/
+新建文件夹/
+新建文件夹 (2)/
+gomoku_strong_package校赛/
+*.doc
+*.docx
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.zip
+
+# Local secrets
+.env
+.env.*
+
+# Local metadata not needed by the public source repository
+software_info.json
+
+# Local helper scripts used during experiments and report generation
+scripts/
+tools/
+
+# Tests for local-only data ingestion, analysis and package staging tools
+tests/test_auxiliary_label_analysis.py
+tests/test_build_supervised_from_records.py
+tests/test_external_ai_adaptation_dataset.py
+tests/test_hybrid_survival_dataset_audit.py
+tests/test_import_renjunet_xml.py
+tests/test_pretrained_model_tactical_positions.py
+tests/test_record_corpus_builder.py
+tests/test_saved_game_mistake_dataset.py
+tests/test_strong_package_layout.py

@@ -1,0 +1,16 @@
+rule_mode: basic
+player: neural_guarded
+variant: no_hybrid_fallback
+fallback_mode: off
+tactical_guardrail: true
+use_hybrid_fallback: false
+tactical_specialist_checkpoint: outputs/checkpoints/latest_advanced_tactical_restoration_from_curriculum.pt
+v2_checkpoint: outputs/checkpoints/latest_advanced_mistake_v2_from_latest.pt
+latest_checkpoint: outputs/checkpoints/latest_advanced.pt
+device: cuda
+num_simulations: 50
+notes: >
+  Final basic-mode demo configuration. The validated benchmark variant is
+  neural_guarded_no_hybrid_fallback, which disables HybridPlayer as a direct
+  fallback action source. This is an inference-layer player configuration, not
+  a single promoted checkpoint.

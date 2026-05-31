@@ -1,0 +1,34 @@
+experiment_name: stage1_tactical_pretrain
+seed: 2026
+device: cuda
+allow_cpu_fallback: false
+model_type: advanced
+board_size: 15
+rule_mode: basic
+tactical_games: 500
+use_augmentation: true
+use_auxiliary_loss: true
+pretrain_epochs: 10
+finetune_epochs: 0
+batch_size: 64
+learning_rate: 0.001
+weight_decay: 0.0001
+num_simulations: 50
+selfplay_games: 0
+benchmark_games: 10
+checkpoint_dir: outputs/checkpoints
+log_dir: outputs/logs
+output_dir: outputs/experiments
+resume_from:
+promote: false
+loss_weights:
+  policy: 1.0
+  value: 1.0
+  threat: 0.3
+  forbidden: 0.2
+  tactical_score: 0.1
+scheduler: cosine
+warmup_epochs: 1
+grad_clip: 5.0
+mixed_precision: true
+max_moves: 80
